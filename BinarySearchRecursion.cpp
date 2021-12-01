@@ -1,4 +1,4 @@
-//Binary Search using iterative methods
+//Binary Search using recursion
 #include <iostream>
 using namespace std;
 
@@ -11,11 +11,11 @@ int binary_search(int arr[], int x, int low, int high){ //Function to do binary 
         }
         
         else if(x<arr[mid]){
-            high = mid-1;
+            return binary_search(arr, x, low, mid-1);
         }
         
         else{
-            low = mid +1;
+            return binary_search(arr, x, mid+1, high);
         }
     }
     
